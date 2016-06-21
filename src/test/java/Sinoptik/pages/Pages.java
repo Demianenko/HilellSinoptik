@@ -10,4 +10,7 @@ public class Pages {
     public static HomePage homePage(WebDriver driver){
         return PageFactory.initElements(driver,HomePage.class);
     }
+    public static SinoptikMainPage sinoptikMainPage (WebDriver driver){
+        return PageFactory.initElements(driver,SinoptikMainPage.class);
+    }
 }
