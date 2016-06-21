@@ -1,8 +1,10 @@
 package Sinoptik;
 
+import Sinoptik.pages.Pages;
 import Sinoptik.util.PropertyLoader;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -21,6 +23,8 @@ public class TestNgTestBase {
   protected static Capabilities capabilities;
 
   protected WebDriver driver;
+  protected Pages pages;
+  public WebDriverWait wait;
 
   @BeforeSuite
   public void initTestSuite() throws IOException {
@@ -37,6 +41,7 @@ public class TestNgTestBase {
   @BeforeMethod
   public void initWebDriver() {
     driver = WebDriverFactory.getDriver(gridHubUrl, capabilities);
+    wait = new WebDriverWait(driver,20);
   }
 
   @AfterSuite(alwaysRun = true)
