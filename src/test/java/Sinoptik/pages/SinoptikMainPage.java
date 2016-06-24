@@ -25,6 +25,7 @@ public class SinoptikMainPage extends Page {
 
     public SinoptikMainPage(WebDriver driver) {
         super(driver);
+       // HtmlElementLoader.populatePageObject(this, driver);
 
     }
 

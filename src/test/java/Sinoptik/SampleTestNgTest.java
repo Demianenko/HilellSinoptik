@@ -24,15 +24,16 @@ public class SampleTestNgTest extends TestNgTestBase {
     public void testHomePageHasAHeader() {
         Assert.assertFalse("Погода".equals(Pages.homePage(driver).header.getText()));
     }
-    @Test(enabled = false)
+    @Test(description = "good",enabled = false) //не работает
     public void serchCity() throws InterruptedException {
         Pages.sinoptikMainPage(driver).htmlInit(driver);
         Pages.sinoptikMainPage(driver).searchCity("Маяки");
         Assert.assertTrue(Pages.sinoptikMainPage(driver).getTitle().contains("Маяки"));
     }
-    @Test(enabled = true)
+    @Test(description = "bad",enabled = true) //работает
     public void serchCityNew() throws InterruptedException {
-        sinoptikMainPage.htmlInit(driver);
+        sinoptikMainPage.htmlInit(driver); // -- в примере делают этот этап через конструктор, у меня через канструктор
+        // не выходит, только так
         sinoptikMainPage.searchCity("Маяки");
         Thread.sleep(2000);
         Assert.assertTrue(sinoptikMainPage.header.getText().contains("Маяки"));
