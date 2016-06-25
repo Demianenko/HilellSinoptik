@@ -19,8 +19,10 @@ public class SampleTestNgTest extends TestNgTestBase {
     @BeforeMethod
     public void loadPage() {
         driver.get(baseUrl);
+        System.out.println("No No");
     }
-    @Test(enabled = false)
+
+    /*@Test(enabled = false)
     public void testHomePageHasAHeader() {
         Assert.assertFalse("Погода".equals(Pages.homePage(driver).header.getText()));
     }
@@ -29,14 +31,14 @@ public class SampleTestNgTest extends TestNgTestBase {
         Pages.sinoptikMainPage(driver).htmlInit(driver);
         Pages.sinoptikMainPage(driver).searchCity("Маяки");
         Assert.assertTrue(Pages.sinoptikMainPage(driver).getTitle().contains("Маяки"));
-    }
+    }*/
     @Test(description = "bad",enabled = true) //работает
     public void serchCityNew() throws InterruptedException {
         sinoptikMainPage.htmlInit(driver); // -- в примере делают этот этап через конструктор, у меня через канструктор
         // не выходит, только так
-        sinoptikMainPage.searchCity("Маяки");
+        sinoptikMainPage.searchCity("Kiev");
         Thread.sleep(2000);
-        Assert.assertTrue(sinoptikMainPage.header.getText().contains("Маяки"));
+        Assert.assertTrue(sinoptikMainPage.header.getText().contains("Киев"));
     }
     @AfterTest
     public void closeDriver() {
