@@ -1,5 +1,6 @@
 package Sinoptik.pages;
 
+import Sinoptik.util.Log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -25,6 +26,7 @@ public class SinoptikMainPage extends Page {
 
     public SinoptikMainPage(WebDriver driver) {
         super(driver);
+        Log.info("Main page is created");
        // HtmlElementLoader.populatePageObject(this, driver);
 
     }

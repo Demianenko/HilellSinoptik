@@ -13,4 +13,7 @@ public class Pages {
     public static SinoptikMainPage sinoptikMainPage (WebDriver driver){
         return PageFactory.initElements(driver,SinoptikMainPage.class);
     }
+    public static SinoptikMainPage sinoptikMainPage1 (WebDriver driver){
+        return new SinoptikMainPage(driver);
+    }
 }

@@ -1,6 +1,7 @@
 package Sinoptik;
 
 import Sinoptik.pages.Pages;
+import Sinoptik.util.Log;
 import Sinoptik.util.PropertyLoader;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -40,6 +41,7 @@ public class TestNgTestBase {
 
   @BeforeMethod
   public void initWebDriver() {
+    Log.info("Start WebDriver inicalization");
     driver = WebDriverFactory.getDriver(gridHubUrl, capabilities);
     wait = new WebDriverWait(driver,20);
   }

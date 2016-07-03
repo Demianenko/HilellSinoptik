@@ -1,5 +1,6 @@
 package Sinoptik.pages;
 
+import Sinoptik.util.Log;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import ru.yandex.qatools.htmlelements.annotations.Block;
@@ -23,7 +24,9 @@ import ru.yandex.qatools.htmlelements.element.TextInput;
         private Button searchButton;
 
         public void search(String request) {
+            Log.info("Set city " + request);
             requestInput.sendKeys(request);
+            Log.info("Click button");
             searchButton.click();
         }
 
